@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="./stylesheets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="landing input-list style-4 clearfix">
+
+
+<!-- <span class="landing-header">uncover</span> -->
+<!-- <i class="fa fa-map-signs fa-2x"></i> -->
+      <input type="text" placeholder="Where?" class="location">
+
+      <input type="text" placeholder="What?" class="query">
+
+      <!-- <div class="button" onClick="userParams()">Enter</div> -->
+      <i class="fa fa-search fa-2x button"onClick="userParams()"></i>
+
+  </div>
+  <div id="map" style="width:100%;height: 400px; margin-bottom: 10px;"></div>
+  <div class="container">
+
+    <script id="parameters" type="text/x-handlebars-template">
+      <span class="heading"> Searching in {{geocode.displayString}} {{#if query}}for {{query}}{{/if}}</span>
+    </script>
+    <div class="error">
+
+    </div>
+
+    <script id="results" type="text/x-handlebars-template">
+      <div class="box-container">
+        {{#each items}}
+        <div class="box">
+          {{#if venue.url}}<a href="{{venue.url}}" target="_blank">
+          {{#if venue.photos.groups.0.items.0.prefix}}
+          <div class="image">
+            <img src="{{picture venue.photos}}" />
+            <div class="caption-box">
+              <span class="text-overlay">{{venue.name}}</span>
+            </div>
+          </div>
+          {{else}}
+          <div class="caption-box-no-image">
+            <span class="text-overlay">{{venue.name}}</span>
+          </div>
+          {{/if}}
+          </a>
+          {{else}}
+          {{#if venue.photos.groups.0.items.0.prefix}}
+          <div class="image">
+            <img src="{{picture venue.photos}}" />
+            <div class="caption-box">
+              <span class="text-overlay">{{venue.name}}</span>
+            </div>
+          </div>
+          {{else}}
+          <div class="caption-box-no-image">
+            <span class="text-overlay">{{venue.name}}</span>
+          </div>
+          {{/if}}
+          {{/if}}
+          <div class="box-bottom">
+            <div class="box-bottom-container">
+
+            <div class="box-bottom-left">
+              <p>
+                Rating: {{venue.rating}}
+              </p>
+              {{#if venue.price.message}}
+              <p>
+                Price: {{venue.price.message}}
+              </p>
+              {{/if}}
+               {{#each tips}} {{likes.count}} <i class="fa fa-thumbs-o-up"></i>{{/each}}
+            </div>
+            <div class="box-bottom-right">
+              {{#if venue.contact.twitter}}
+              <a href="https://twitter.com/{{venue.contact.twitter}}" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+              {{/if}}
+              {{#if venue.contact.facebook}}
+              <a href="https://twitter.com/{{venue.contact.facebook}}" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+              {{/if}}
+              {{#if venue.contact.phone}}
+            <a href="tel:+{{venue.contact.phone}}">  <i class="fa fa-phone fa-2x"></i>
+            </a>
+              {{/if}}
+              {{#if venue.menu.mobileUrl}}
+              <p>
+                <a href="{{venue.menu.mobileUrl}}" target="_blank">Menu</a>
+              </p>
+              {{/if}}
+              {{#if venue.delivery.url}}
+              <p>
+                <a href="{{venue.delivery.url}}" target="_blank">Order</a>
+              </p>
+              {{/if}}
+
+
+
+            </div>
+              </div>
+ {{#each tips}}
+            <hr> {{user.firstName}} says {{text}} {{/each}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </script>
+
+    <div class="search-parameters"></div>
+    <div class="entry"></div>
+  </div>
+
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9-aG6iLSGl71yEmPCG-qOzDqVB9SgQN8&signed_in=true&libraries=visualization&callback=initMap">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9-aG6iLSGl71yEmPCG-qOzDqVB9SgQN8&callback=initMap">
+</script> -->
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
