@@ -5,8 +5,8 @@ body {
 }
 .landing {
 
-  background-image: url("../images/cubes.png");
-  background-color: #fff;
+  // background-image: url("../images/cubes.png");
+  background-color: #dad8d8;
   // background-size: cover;
   // background-position: center;
   height: 100vh;
@@ -55,7 +55,7 @@ body {
   margin: auto;
 }
 .box {
-  width: 45%;
+  width: 30%;
   background-color: #fff;
   margin: 12px 0;
   border: 1px solid #333;
@@ -134,30 +134,74 @@ input[type="text"] {
   width: 200px;
   margin: 25px;
   background-color: transparent;
+    color: #fff;
+
 }
+::-webkit-input-placeholder {
+    color:    #999;
+}
+:-moz-placeholder {
+    color:    #999;
+}
+::-moz-placeholder {
+    color:    #999;
+}
+:-ms-input-placeholder {
+    color:    #999;
+}
+
+/* Different color for some fields */
+
+.location::-webkit-input-placeholder,
+.query::-webkit-input-placeholder
+{
+  color:    #fff;
+}
+
+.location:-moz-placeholder,
+.query:-moz-placeholder
+{
+  color:    #fff;
+}
+
+.location::-moz-placeholder,
+.query::-moz-placeholder
+{
+  color:    #fff;
+}
+
+.location:-ms-input-placeholder,
+.query:-ms-input-placeholder
+{
+  color:    #fff;
+}
+
 li {
   text-decoration: none;
 }
 input[type="text"]:focus {
   outline: none;
+    color: #fff;
 }
 .style-4 input[type="text"] {
   padding: 10px;
   border: none;
-  border-bottom: solid 2px #ccc;
+  border-bottom: solid 2px blue;
   transition: border 0.3s;
+  color: #fff;
 }
 .style-4 input[type="text"]:focus,
 .style-4 input[type="text"].focus {
-  border-bottom: solid 2px blue;
+  border-bottom: solid 2px #fff;
   text-decoration: none;
+    color: #fff;
 }
 @media (max-width: 768px) {
   .box {
-    width: 100%;
+    width: 45%;
   }
   .box-container {
-      justify-content: center;
+      justify-content: space-between;
   }
   input[type="text"]{
     width: 125px;
@@ -168,5 +212,13 @@ input[type="text"]:focus {
   }
   .search-parameters {
     text-align: center;
+  }
+}
+@media (max-width: 550px) {
+  .box {
+    width: 100%;
+  }
+  .box-container {
+      justify-content: center;
   }
 }
