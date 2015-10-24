@@ -60,6 +60,7 @@ function getVenues(location, query) {
       getLocationArr(data);
       map(data);
       clearError();
+      console.log(data);
     },
     error: function() {
       $(".error").append("oops! We couldn't find what you were looking for.  Try searching again.");

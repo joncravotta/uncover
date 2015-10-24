@@ -106,7 +106,7 @@
             {{#each tips}}
             <hr> {{user.firstName}} says {{text}} {{/each}}
           </div>
-          <div class="box-map">
+          <div class="box-map" data-id="{{venue.id}}" data-lat="{{venue.location.lat}}" data-lng="{{venue.location.lng}}">
             <span>MAP</span><i class="fa fa-map-marker fa-2x"></i>
           </div>
         </div>
