@@ -41,8 +41,6 @@ function userParams() {
   var location = $('.location').val();
   var query = $('.query').val();
   return getVenues(location, query);
-  console.log(location);
-  console.log(query);
 }
 
 function getVenues(location, query) {
@@ -78,8 +76,8 @@ function getLocationArr(data) {
   var lat;
   var lng;
   for (var x = 0; x < data.response.groups[0].items.length; x++) {
-    var lat = data.response.groups[0].items[x].venue.location.lat;
-    var lng = data.response.groups[0].items[x].venue.location.lat;
+    lat = data.response.groups[0].items[x].venue.location.lat;
+    lng = data.response.groups[0].items[x].venue.location.lat;
     var latLng = lat + ", " + lng;
     arr.push(latLng);
 
@@ -101,7 +99,7 @@ function getArr(data) {
 
 function getMaxOfArr(arr) {
   var max = Math.max.apply(null, arr);
-  console.log("Max Number: " + max)
+  console.log("Max Number: " + max);
   getPercentages(arr, max);
 }
 
@@ -154,7 +152,8 @@ function map(data) {
       mapTypeId: google.maps.MapTypeId.MAP,
       styles: [{
         stylers: [{
-          hue: "#49798C"
+          hue: "#3274FF",
+          saturation: "-20"
         }]
       }, {
         featureType: "road",
@@ -195,7 +194,7 @@ function map(data) {
       'rgba(127, 0, 63, 1)',
       'rgba(191, 0, 31, 1)',
       'rgba(255, 0, 0, 1)'
-    ]
+    ];
     heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
   }
 
@@ -227,7 +226,5 @@ function map(data) {
     }
 
     return arr;
-    console.log(arr);
-
   }
 }

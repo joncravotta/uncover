@@ -5,10 +5,8 @@ body {
 }
 .landing {
 
-  // background-image: url("../images/cubes.png");
-  background-color: #dad8d8;
-  // background-size: cover;
-  // background-position: center;
+  // background-image: url("../images/city.jpg");
+  background-color: #ccc;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -21,6 +19,7 @@ body {
     font: 700 45px 'Oswald';
   }
 }
+
 // .button {
 //   background-color: blue;
 //
@@ -32,16 +31,15 @@ body {
 //   }
 // }
 .fa-search {
-  color: blue;
+  color: #fff;
   cursor: pointer;
 }
-
 .fixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  border-bottom: 2px solid blue;
+  border-bottom: 3px solid blue;
 }
 .heading {
   font: 700 20px 'Oswald';
@@ -59,6 +57,7 @@ body {
   background-color: #fff;
   margin: 12px 0;
   border: 1px solid #333;
+  align-self: center;
   img {
     width: 100%;
   }
@@ -67,6 +66,20 @@ body {
   padding: 25px;
   font: normal 13px 'pt mono';
 }
+.box-map {
+    height: 50px;
+    background-color: blue;
+    color: #fff;
+    font: 700 15px 'Oswald';
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    i {
+      padding-right: 25px;
+    }
+}
+
 .box-bottom-container {
   display: flex;
   display: -webkit-flex;
@@ -86,17 +99,17 @@ body {
 .box-bottom-right i {
   color: #ccc;
   &:hover {
-  color: blue;
+    color: blue;
   }
 }
 .box-bottom-right {
   text-align: right;
 }
-.box-bottom-right a{
+.box-bottom-right a {
   text-align: right;
   color: #ccc;
   &:hover {
-  color: blue;
+    color: blue;
   }
 }
 .image {
@@ -133,77 +146,67 @@ input[type="text"] {
   border-radius: none;
   width: 200px;
   margin: 25px;
-  background-color: transparent;
-    color: #fff;
-
+  background-color: #f7f7f7;
+  color: #fff;
 }
-::-webkit-input-placeholder {
-    color:    #999;
+ ::-webkit-input-placeholder {
+  color: #999;
 }
-:-moz-placeholder {
-    color:    #999;
+ :-moz-placeholder {
+  color: #999;
 }
-::-moz-placeholder {
-    color:    #999;
+ ::-moz-placeholder {
+  color: #999;
 }
-:-ms-input-placeholder {
-    color:    #999;
+ :-ms-input-placeholder {
+  color: #999;
 }
 
 /* Different color for some fields */
-
 .location::-webkit-input-placeholder,
-.query::-webkit-input-placeholder
-{
-  color:    #fff;
+.query::-webkit-input-placeholder {
+  color: blue;
 }
-
 .location:-moz-placeholder,
-.query:-moz-placeholder
-{
-  color:    #fff;
+.query:-moz-placeholder {
+  color: blue;
 }
-
 .location::-moz-placeholder,
-.query::-moz-placeholder
-{
-  color:    #fff;
+.query::-moz-placeholder {
+  color: blue;
 }
-
 .location:-ms-input-placeholder,
-.query:-ms-input-placeholder
-{
-  color:    #fff;
+.query:-ms-input-placeholder {
+  color: blue;
 }
-
 li {
   text-decoration: none;
 }
 input[type="text"]:focus {
   outline: none;
-    color: #fff;
+  color: blue;
 }
 .style-4 input[type="text"] {
   padding: 10px;
   border: none;
-  border-bottom: solid 2px blue;
+  border-bottom: solid 2px #999;
   transition: border 0.3s;
-  color: #fff;
+  color: blue;
 }
 .style-4 input[type="text"]:focus,
 .style-4 input[type="text"].focus {
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px blue;
   text-decoration: none;
-    color: #fff;
+  color: blue;
 }
 @media (max-width: 768px) {
   .box {
     width: 45%;
   }
   .box-container {
-      justify-content: space-between;
+    justify-content: space-between;
   }
-  input[type="text"]{
+  input[type="text"] {
     width: 125px;
     margin: 10px;
   }
@@ -219,6 +222,6 @@ input[type="text"]:focus {
     width: 100%;
   }
   .box-container {
-      justify-content: center;
+    justify-content: center;
   }
 }
