@@ -57,7 +57,7 @@ body {
   background-color: #fff;
   margin: 12px 0;
   border: 1px solid #333;
-  align-self: center;
+  align-self: flex-start;
   img {
     width: 100%;
   }
@@ -75,6 +75,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: #0044FF;
+    }
     i {
       padding-right: 25px;
     }
