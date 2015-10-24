@@ -6,6 +6,9 @@
 //
 // https://api.foursquare.com/v2/venues/search?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&ll=40.7,-74&v=20140920
 //Animations
+$(window).load(function(){
+    initialize();
+});
 $(".button").one("click", function() {
   $('.landing').animate({
     "height": "100px"
@@ -228,4 +231,52 @@ function map(data) {
 
     return arr;
   }
+}
+
+//individual map for each box on click
+$('body').on('click', '.box-map', (function(e) {
+var self = this;
+var boxLat = $(self).data("lat");
+var boxLng = $(self).data("lng");
+var boxId = $(self).data("id");
+boxMap(self,boxId, boxLat, boxLng);
+}));
+
+function boxMap(self, boxId, boxLat, boxLng) {
+console.log("in boxmap:" + boxId, boxLat, boxLng);
+initMap(self,boxId, boxLat, boxLng);
+function initMap(self, boxId, boxLat, boxLng) {
+  console.log("in map:" + boxId, boxLat, boxLng);
+    var map;
+    map = new google.maps.Map(document.getElementById(boxId), {
+      zoom: 14,
+      scrollwheel: false,
+      center: {
+        lat: boxLat,
+        lng: boxLng
+      },
+      mapTypeId: google.maps.MapTypeId.MAP,
+      styles: [{
+        stylers: [{
+          hue: "#3274FF",
+          saturation: "-20"
+        }]
+      }, {
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [{
+          lightness: 100
+        }]
+      }, {
+        featureType: "road",
+        elementType: "labels"
+      }]
+    });
+    showMap(boxId);
+}
+function showMap(boxId){
+  $('#'+boxId).animate({
+    "height": "300px"
+  });
+}
 }
