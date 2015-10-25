@@ -6,8 +6,8 @@
 //
 // https://api.foursquare.com/v2/venues/search?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&ll=40.7,-74&v=20140920
 //Animations
-$(window).load(function(){
-    initialize();
+$(window).load(function() {
+  initialize();
 });
 $(".button").one("click", function() {
   $('.landing').animate({
@@ -24,7 +24,7 @@ $(".button").one("click", function() {
 //     $('.landing').removeClass('fixed');
 //   }
 // });
-window.addEventListener('scroll', function (evt) {
+window.addEventListener('scroll', function(evt) {
 
   // This value is your scroll distance from the top
   var distance_from_top = document.body.scrollTop;
@@ -35,11 +35,12 @@ window.addEventListener('scroll', function (evt) {
   }
 
   // The user has scrolled down the page.
-  if(distance_from_top > 0) {
+  if (distance_from_top > 0) {
     $('.landing').addClass('fixed');
   }
 
 });
+
 function userParams() {
   var location = $('.location').val();
   var query = $('.query').val();
@@ -235,18 +236,24 @@ function map(data) {
 
 //individual map for each box on click
 $('body').on('click', '.box-map', (function(e) {
-var self = this;
-var boxLat = $(self).data("lat");
-var boxLng = $(self).data("lng");
-var boxId = $(self).data("id");
-boxMap(self,boxId, boxLat, boxLng);
+  var self = this;
+  var boxLat = $(self).data("lat");
+  var boxLng = $(self).data("lng");
+  var boxId = $(self).data("id");
+  showMap(self, boxId, boxLat, boxLng);
 }));
 
+function showMap(self, boxId, boxLat, boxLng) {
+  $('#' + boxId).css("height", "250px");
+  boxMap(self, boxId, boxLat, boxLng);
+}
+
 function boxMap(self, boxId, boxLat, boxLng) {
-console.log("in boxmap:" + boxId, boxLat, boxLng);
-initMap(self,boxId, boxLat, boxLng);
-function initMap(self, boxId, boxLat, boxLng) {
-  console.log("in map:" + boxId, boxLat, boxLng);
+  console.log("in boxmap:" + boxId, boxLat, boxLng);
+  initMap(self, boxId, boxLat, boxLng);
+
+  function initMap(self, boxId, boxLat, boxLng) {
+    console.log("in map:" + boxId, boxLat, boxLng);
     var map;
     map = new google.maps.Map(document.getElementById(boxId), {
       zoom: 14,
@@ -272,11 +279,14 @@ function initMap(self, boxId, boxLat, boxLng) {
         elementType: "labels"
       }]
     });
-    showMap(boxId);
-}
-function showMap(boxId){
-  $('#'+boxId).animate({
-    "height": "300px"
-  });
-}
+    var marker = new google.maps.Marker({
+      position: {
+        lat: boxLat,
+        lng: boxLng
+      },
+      icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      map: map,
+      title: 'Hello World!'
+    });
+  }
 }
