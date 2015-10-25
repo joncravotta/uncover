@@ -11,23 +11,16 @@
   <link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    #map {
-      height: 100%;
-    }
-  </style>
 </head>
 
 <body>
 
-  <div class="landing input-list style-4 clearfix">
+  <div class="landing style-4 clearfix">
+<div class="cta">
+<span class="main-cta">uncover</span>
+<span class="sub-cta">Explore neighborhoods like a local</span>
+</div>
+<div class ="input-list">
 
     <i class="fa fa-bars fa-2x"></i>
     <input type="text" placeholder="Where?" class="location">
@@ -37,6 +30,7 @@
     <!-- <div class="button" onClick="userParams()">Enter</div> -->
     <i class="fa fa-search fa-2x button" onClick="userParams()"></i>
   </div>
+</div>
   <div id="map" style="width:100%;height: 400px; margin-bottom: 10px;"></div>
   <div class="container">
 

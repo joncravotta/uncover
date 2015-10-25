@@ -31,10 +31,34 @@ body {
   -webkit-align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
+flex-direction: column;
+text-align: center;
 
-  h1 {
+  .main-cta {
     font: 700 45px 'Oswald';
+    color: blue;
+    margin: 0;
+    display: block;
   }
+    .sub-cta {
+  font: normal 15px 'pt mono';
+      color: blue;
+      margin: 0;
+      padding:5px 0;
+      display: block;
+    }
+}
+.cta {
+  padding-bottom: 25px;
+}
+.input-list {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
 }
 
 // .button {

@@ -10,20 +10,18 @@ $(window).load(function() {
   initialize();
 });
 $(".button").one("click", function() {
+  $( ".cta" ).fadeOut( "slow" );
   $('.landing').animate({
     "height": "50px"
   }, {
     duration: 4000
   });
-  $('.landing').animate({backgroundColor: 'blue'}, 'fast');
+  $('.landing').animate({
+    backgroundColor: 'blue'
+  }, 'fast');
+
 });
-// $(window).scroll(function() {
-//   if ($(this).scrollTop() > 5) {
-//     $('.landing').addClass('fixed');
-//   } else {
-//     $('.landing').removeClass('fixed');
-//   }
-// });
+
 window.addEventListener('scroll', function(evt) {
 
   // This value is your scroll distance from the top
