@@ -11,11 +11,11 @@ $(window).load(function(){
 });
 $(".button").one("click", function() {
   $('.landing').animate({
-    "height": "100px"
+    "height": "50px"
   }, {
     duration: 4000
   });
-  // $(".landing").css({"position": "fixed", "z-index": "10"});
+  $('.landing').animate({backgroundColor: 'blue'}, 'fast');
 });
 // $(window).scroll(function() {
 //   if ($(this).scrollTop() > 5) {

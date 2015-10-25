@@ -1,8 +1,24 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   width: 100%;
-  margin: auto;
   background-color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+#map {
+  height: 100%;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
 .landing {
 
   // background-image: url("../images/city.jpg");
@@ -15,6 +31,7 @@ body {
   -webkit-align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
+
   h1 {
     font: 700 45px 'Oswald';
   }
@@ -30,58 +47,71 @@ body {
 //     background-color: #333;
 //   }
 // }
-.fa-search {
+
+.fa-search,
+.fa-bars {
   color: #fff;
   cursor: pointer;
+  width: 10%;
+  text-align: center;
 }
+
 .fixed {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  border-bottom: 3px solid blue;
 }
+
 .heading {
   font: 700 20px 'Oswald';
 }
+
 .error {
   font: 700 20px 'Oswald';
   text-align: center;
 }
+
 .container {
   width: 90%;
   margin: auto;
 }
+
 .box {
   width: 30%;
   background-color: #fff;
   margin: 12px 0;
   border: 1px solid #333;
   align-self: flex-start;
+
   img {
     width: 100%;
   }
 }
+
 .box-bottom {
   padding: 25px;
   font: normal 13px 'pt mono';
 }
+
 .box-map {
-    height: 50px;
-    background-color: blue;
-    color: #fff;
-    font: 700 15px 'Oswald';
-    padding-left: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    &:hover {
-      background-color: #0044FF;
-    }
-    i {
-      padding-right: 25px;
-    }
+  height: 50px;
+  background-color: blue;
+  color: #fff;
+  font: 700 15px 'Oswald';
+  padding-left: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #04f;
+  }
+
+  i {
+    padding-right: 25px;
+  }
 }
 
 .box-bottom-container {
@@ -92,6 +122,7 @@ body {
   justify-content: space-between;
   -webkit-justify-content: space-between;
 }
+
 .box-container {
   display: flex;
   display: -webkit-flex;
@@ -100,29 +131,37 @@ body {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
 }
+
 .box-bottom-right i {
   color: #ccc;
+
   &:hover {
     color: blue;
   }
 }
+
 .box-bottom-right {
   text-align: right;
 }
+
 .box-bottom-right a {
   text-align: right;
   color: #ccc;
+
   &:hover {
     color: blue;
   }
 }
+
 .image {
   position: relative;
 }
+
 .text-overlay {
   color: black;
   padding-left: 10px;
 }
+
 .caption-box {
   background-color: white;
   width: 100%;
@@ -131,37 +170,50 @@ body {
   top: 0;
   font: 700 20px 'Oswald';
 }
+
 .caption-box-no-image {
   background-color: white;
   width: 100%;
   padding: 10px 0;
   font: 700 20px 'Oswald';
 }
+
 .landing-header {
   display: block;
 }
+
+input {
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
 input[type="text"] {
   margin: 0;
-  width: 100%;
-  font-family: sans-serif;
-  font-size: 18px;
+  font: 400 20px 'Oswald';
   appearance: none;
   box-shadow: none;
   border-radius: none;
-  width: 200px;
-  margin: 25px;
-  background-color: #f7f7f7;
-  color: #fff;
+  background-color: #fff;
+  height: 50px;
+  width: 40%;
 }
+
  ::-webkit-input-placeholder {
   color: #999;
 }
+
  :-moz-placeholder {
   color: #999;
 }
+
  ::-moz-placeholder {
   color: #999;
 }
+
  :-ms-input-placeholder {
   color: #999;
 }
@@ -171,60 +223,85 @@ input[type="text"] {
 .query::-webkit-input-placeholder {
   color: blue;
 }
+
 .location:-moz-placeholder,
 .query:-moz-placeholder {
   color: blue;
 }
+
 .location::-moz-placeholder,
 .query::-moz-placeholder {
   color: blue;
 }
+
 .location:-ms-input-placeholder,
 .query:-ms-input-placeholder {
   color: blue;
 }
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 li {
   text-decoration: none;
 }
+
 input[type="text"]:focus {
   outline: none;
   color: blue;
 }
+
 .style-4 input[type="text"] {
-  padding: 10px;
   border: none;
-  border-bottom: solid 2px #999;
+  border-bottom: solid 2px #fff;
   transition: border 0.3s;
   color: blue;
 }
+
 .style-4 input[type="text"]:focus,
 .style-4 input[type="text"].focus {
   border-bottom: solid 2px blue;
   text-decoration: none;
   color: blue;
 }
+
 @media (max-width: 768px) {
   .box {
     width: 45%;
   }
+
   .box-container {
     justify-content: space-between;
   }
+
   input[type="text"] {
-    width: 125px;
-    margin: 10px;
+    width: 35%;
   }
+
+  .fa-search,
+  .fa-bars {
+    width: 15%;
+  }
+
   .style-4 input[type="text"] {
-    padding: 5px;
+
   }
+
   .search-parameters {
     text-align: center;
   }
 }
+
 @media (max-width: 550px) {
   .box {
     width: 100%;
   }
+
   .box-container {
     justify-content: center;
   }
