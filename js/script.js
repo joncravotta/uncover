@@ -48,12 +48,6 @@ function userParams() {
 function getVenues(location, query) {
   $.ajax({
     url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + location + "&query=" + query + "&venuePhotos=1&v=20150927",
-    // beforeSend: function() {
-    //         $(".landing").append('<i class="fa fa-spinner fa-pulse"></i>');
-    // },
-    // complete: function() {
-    //   $( ".fa fa-spinner fa-pulse" ).remove();
-    // },
     success: function(data) {
       // displayInfo(result);
       displayResults(data);
@@ -209,29 +203,14 @@ function map(data) {
     heatmap.set('opacity', heatmap.get('opacity') ? null : 0.7);
   }
 
-  // function reboot(Ddatas) {
-  // //    alert(Ddatas);
-  //     var arraino = [];
-  //     for (a in Ddatas) {
-  //         arraino.push(new google.maps.LatLng(
-  //             Ddatas[a][0],
-  //             Ddatas[a][1]));
-  //     }
-  // //    alert(arraino);
-  //     return (arraino);
-  // }
-  // Heatmap data: 500 Points
   function getPoints(data) {
-    //new google.maps.LatLng(points)
     var arr = [];
     for (var x = 0; x < data.response.groups[0].items.length; x++) {
       arr.push(new google.maps.LatLng(data.response.groups[0].items[x].venue.location.lat, data.response.groups[0].items[x].venue.location.lng));
     }
-
     return arr;
   }
 }
-
 //individual map for each box on click
 $('body').on('click', '.box-map', (function(e) {
   var self = this;
