@@ -2,12 +2,10 @@ var FoursquareRequest = function() {
   this.searchCount = 0;
 };
 
-var Handlebars = function() {
+var Handlebars = function() {};
 
-};
-var DomAction = function(){
+var DomAction = function() {};
 
-};
 var VenueLocation = function() {
   var self = this;
   var boxLat = $(self).data("lat");
@@ -25,16 +23,20 @@ $(".search").click(function() {
   var what = $('.query').val();
   search.ajaxRequest(where, what);
 });
+
 FoursquareRequest.prototype.navbarFixed = function(){
    if (this.searchCount === 1){
      dom.createNavbar();
    }
 };
+
 FoursquareRequest.prototype.ajaxRequest = function(where, what) {
   $.ajax({
     url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + where + "&query=" + what + "&venuePhotos=1&v=20150927",
     success: function(data) {
-
+      search.navbarFixed();
+      template.showSearchParameters(data);
+      template.showVenues(data);
     },
     error: function() {
       $(".error").append("oops! We couldn't find what you were looking for.  Try searching again.");

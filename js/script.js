@@ -6,9 +6,6 @@
 //
 // https://api.foursquare.com/v2/venues/search?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&ll=40.7,-74&v=20140920
 //Animations
-$(window).load(function() {
-  initialize();
-});
 $(".button").one("click", function() {
   $(".cta").fadeOut("slow");
   $('.landing').animate({
@@ -52,7 +49,6 @@ function getVenues(location, query) {
       // displayInfo(result);
       displayResults(data);
       displayParameters(data);
-      getArr(data);
       getLocationArr(data);
       map(data);
       clearError();
