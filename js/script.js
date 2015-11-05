@@ -10,7 +10,7 @@ $(window).load(function() {
   initialize();
 });
 $(".button").one("click", function() {
-  $( ".cta" ).fadeOut( "slow" );
+  $(".cta").fadeOut("slow");
   $('.landing').animate({
     "height": "50px"
   }, {
@@ -68,47 +68,47 @@ function clearError() {
   $(".error").empty();
 }
 
-function getLocationArr(data) {
-  var arr = [];
-  var lat;
-  var lng;
-  for (var x = 0; x < data.response.groups[0].items.length; x++) {
-    lat = data.response.groups[0].items[x].venue.location.lat;
-    lng = data.response.groups[0].items[x].venue.location.lat;
-    var latLng = lat + ", " + lng;
-    arr.push(latLng);
+// function getLocationArr(data) {
+//   var arr = [];
+//   var lat;
+//   var lng;
+//   for (var x = 0; x < data.response.groups[0].items.length; x++) {
+//     lat = data.response.groups[0].items[x].venue.location.lat;
+//     lng = data.response.groups[0].items[x].venue.location.lat;
+//     var latLng = lat + ", " + lng;
+//     arr.push(latLng);
+//
+//   }
+//   console.log(arr);
+//
+// }
 
-  }
-  console.log(arr);
-
-}
-
-function getArr(data) {
-  var current;
-  var arr = [];
-  for (var x = 0; x < data.response.groups[0].items.length; x++) {
-    current = data.response.groups[0].items[x].venue.stats.checkinsCount;
-    arr.push(current);
-  }
-  console.log(arr);
-  getMaxOfArr(arr);
-}
-
-function getMaxOfArr(arr) {
-  var max = Math.max.apply(null, arr);
-  console.log("Max Number: " + max);
-  getPercentages(arr, max);
-}
-
-function getPercentages(arr, max) {
-  var current;
-  var finalArr = [];
-  for (var x = 0; x < arr.length; x++) {
-    current = arr[x] / max * 100;
-    finalArr.push(current);
-  }
-  console.log(finalArr);
-}
+// function getArr(data) {
+//   var current;
+//   var arr = [];
+//   for (var x = 0; x < data.response.groups[0].items.length; x++) {
+//     current = data.response.groups[0].items[x].venue.stats.checkinsCount;
+//     arr.push(current);
+//   }
+//   console.log(arr);
+//   getMaxOfArr(arr);
+// }
+//
+// function getMaxOfArr(arr) {
+//   var max = Math.max.apply(null, arr);
+//   console.log("Max Number: " + max);
+//   getPercentages(arr, max);
+// }
+//
+// function getPercentages(arr, max) {
+//   var current;
+//   var finalArr = [];
+//   for (var x = 0; x < arr.length; x++) {
+//     current = arr[x] / max * 100;
+//     finalArr.push(current);
+//   }
+//   console.log(finalArr);
+// }
 
 
 function displayParameters(data) {
