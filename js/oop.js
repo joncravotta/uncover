@@ -24,10 +24,10 @@ $(".search").click(function() {
   search.ajaxRequest(where, what);
 });
 
-FoursquareRequest.prototype.navbarFixed = function(){
-   if (this.searchCount === 1){
-     dom.createNavbar();
-   }
+FoursquareRequest.prototype.navbarFixed = function() {
+  if (this.searchCount === 1) {
+    dom.createNavbar();
+  }
 };
 
 FoursquareRequest.prototype.ajaxRequest = function(where, what) {
@@ -63,7 +63,7 @@ Handlebars.prototype.showVenues = function(data) {
   $('.entry').html(theCompiledHtml);
 };
 
-venueLocation.prototype.showMap = function() {
+VenueLocation.prototype.showMap = function() {
   var map;
   map = new google.maps.Map(document.getElementById(this.boxId), {
     zoom: 14,
@@ -100,18 +100,18 @@ venueLocation.prototype.showMap = function() {
   });
 };
 
-venueLocation.prototype.addBoxCss = function() {
+VenueLocation.prototype.addBoxCss = function() {
   $('#' + this.boxId).css("height", "250px");
 };
 
 DomAction.prototype.createNavbar = function() {
-    $(".cta").fadeOut("slow");
-    $('.landing').animate({
-      "height": "50px"
-    }, {
-      duration: 4000
-    });
-    $('.landing').animate({
-      backgroundColor: 'blue'
-    }, 'fast');
+  $(".cta").fadeOut("slow");
+  $('.landing').animate({
+    "height": "50px"
+  }, {
+    duration: 4000
+  });
+  $('.landing').animate({
+    backgroundColor: 'blue'
+  }, 'fast');
 };
