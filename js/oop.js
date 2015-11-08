@@ -23,6 +23,7 @@ $('body').on('click', '.box-map', (function(e) {
   var boxLat = $(self).data("lat");
   var boxLng = $(self).data("lng");
   var boxId = $(self).data("id");
+  $('#' + boxId).css("height", "250px");
   requestLocation.showMap(boxLat, boxLng, boxId);
 }));
 
@@ -41,7 +42,7 @@ FoursquareRequest.prototype.ajaxRequest = function(where, what) {
   this.searchCount ++;
   console.log(this.searchCount);
   $.ajax({
-    url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + where + "&query=" + what + "&venuePhotos=1&v=20150927",
+    url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + where + "&query=" + what + "&venuePhotos=1&v=201501105&limit=50",
     success: function(data) {
       console.log(data);
       console.log("made successful request");
@@ -87,7 +88,7 @@ DomAction.prototype.createNavbar = function() {
 };
 //Starting map stuff
 VenueLocation.prototype.showMap = function(boxLat, boxLng, boxId) {
-  $('#' + boxId).css("height", "250px");
+  console.log("boxLat: "+ boxLat + " boxId: " + boxId);
   var map;
   map = new google.maps.Map(document.getElementById(boxId), {
     zoom: 14,
@@ -122,6 +123,9 @@ VenueLocation.prototype.showMap = function(boxLat, boxLng, boxId) {
     map: map,
     title: 'Hello World!'
   });
+  google.maps.event.addListenerOnce(map, 'idle', function(){
+});
+
 };
 
 Heatmap.prototype.builHeatMap = function (data) {
