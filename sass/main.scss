@@ -30,8 +30,9 @@ body {
   -webkit-align-items: center;
   justify-content: center;
   -webkit-justify-content: center;
-flex-direction: column;
-text-align: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
 
   .main-cta {
     font: 700 45px 'Oswald';
