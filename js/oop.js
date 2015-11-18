@@ -37,6 +37,11 @@ FoursquareRequest.prototype.ajaxRequest = function(where, what) {
   this.searchCount ++;
   $.ajax({
     url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + where + "&query=" + what + "&venuePhotos=1&v=201501105&limit=50",
+    // type: 'HEAD',
+    contentType: 'text/plain',
+    xhrFields: {
+      withCredentials: false
+    },
     success: function(data) {
       console.log(data);
       template.showSearchParameters(data);
