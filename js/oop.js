@@ -30,22 +30,20 @@ $('body').on('click', '.box-map', (function(e) {
 FoursquareRequest.prototype.navbarFixed = function() {
   if (this.searchCount === 1) {
     dom.createNavbar();
-    console.log("first!");
-    console.log("inide navbar method: "+this.searchCount);
-  }
-  else{
-    console.log("not first anymore");
   }
 };
 
 FoursquareRequest.prototype.ajaxRequest = function(where, what) {
   this.searchCount ++;
-  console.log(this.searchCount);
   $.ajax({
     url: "https://api.foursquare.com/v2/venues/explore?client_id=SXKR5FJMZN45242ZHFIKTHT3CD3URPED4E2AGEX3W5SFBXNX&client_secret=IHSGUOTBKAK2ZQ3XKEWOY0JOJBZRMGRDT2IOTXZRBQJQO13N&near=" + where + "&query=" + what + "&venuePhotos=1&v=201501105&limit=50",
+    // type: 'HEAD',
+    contentType: 'text/plain',
+    xhrFields: {
+      withCredentials: false
+    },
     success: function(data) {
       console.log(data);
-      console.log("made successful request");
       template.showSearchParameters(data);
       template.showVenues(data);
       venueHeatMap.builHeatMap(data);
@@ -123,9 +121,6 @@ VenueLocation.prototype.showMap = function(boxLat, boxLng, boxId) {
     map: map,
     title: 'Hello World!'
   });
-  google.maps.event.addListenerOnce(map, 'idle', function(){
-});
-
 };
 
 Heatmap.prototype.builHeatMap = function (data) {
