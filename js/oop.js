@@ -75,14 +75,23 @@ TemplateEngine.prototype.showVenues = function(data) {
 
 DomAction.prototype.createNavbar = function() {
   $(".cta").fadeOut("slow");
-  $('.landing').animate({
+  $('.bg-image').animate({
     "height": "50px"
   }, {
     duration: 4000
   });
+    $('.landing').animate({
+      "height": "50px"
+    }, {
+      duration: 4000
+    });
   $('.landing').animate({
     backgroundColor: 'blue'
   }, 'fast');
+  $('input').css({
+    "background": "white"
+  });
+
 };
 //Starting map stuff
 VenueLocation.prototype.showMap = function(boxLat, boxLng, boxId) {

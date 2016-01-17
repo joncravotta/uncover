@@ -1,2 +1,366 @@
-html{height:100%;margin:0;padding:0}body{width:100%;background-color:white;height:100%;margin:0;padding:0}#map{height:100%;width:100%;height:400px;margin-bottom:10px}.landing{background:url("../images/nyc_bg_2.jpg");background-size:cover;height:100vh;width:100%;display:flex;display:-webkit-flex;align-items:center;-webkit-align-items:center;justify-content:flex-start;-webkit-justify-content:flex-start;-webkit-flex-direction:column;flex-direction:column;text-align:center}.landing .main-cta{font:700 45px 'Oswald';color:blue;margin:0;display:block}.landing .sub-cta{font:normal 15px 'pt mono';color:blue;margin:0;padding:5px 0;display:block}.cta{padding-bottom:25px}.input-list{width:100%;display:flex;display:-webkit-flex;align-items:center;-webkit-align-items:center;justify-content:center;-webkit-justify-content:center}.fa-search,.fa-bars{color:#fff;cursor:pointer;width:10%;text-align:center}.fixed{position:fixed;top:0;left:0;z-index:10}.heading{font:700 20px 'Oswald'}.error{font:700 20px 'Oswald';text-align:center}.container{width:90%;margin:auto}.box-container{-moz-column-width:17em;-webkit-column-width:17em;column-width:17em;column-gap:1em;-moz-column-gap:1em;-webkit-column-gap:1em}.box{display:inline-block;margin-bottom:1em;width:100%;border:1px solid #333}.box img{width:100%}.box-bottom{padding:25px;font:normal 13px 'pt mono'}.box-map{height:50px;background-color:blue;color:#fff;font:700 15px 'Oswald';padding-left:25px;display:flex;display:-webkit-flex;justify-content:space-between;-webkit-justify-content:space-between;align-items:center;-webkit-align-items:center;cursor:pointer}.box-map:hover{background-color:#0044ff}.box-map i{padding-right:25px}.box-bottom-container{display:flex;display:-webkit-flex;align-items:center;-webkit-align-items:center;justify-content:space-between;-webkit-justify-content:space-between}.box-bottom-right i{color:#ccc}.box-bottom-right i:hover{color:blue}.box-bottom-right{text-align:right}.box-bottom-right a{text-align:right;color:#ccc}.box-bottom-right a:hover{color:blue}.image{position:relative}.text-overlay{color:black;padding-left:10px}.caption-box{background-color:white;width:100%;padding:10px 0;position:absolute;top:0;font:700 20px 'Oswald'}.caption-box-no-image{background-color:white;width:100%;padding:10px 0;font:700 20px 'Oswald'}.landing-header{display:block}input{padding-left:10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}input[type="text"]{margin:0;font:400 20px 'Oswald';appearance:none;box-shadow:none;border-radius:none;background-color:#fff;height:50px;width:40%}::-webkit-input-placeholder{color:#999}:-moz-placeholder{color:#999}::-moz-placeholder{color:#999}:-ms-input-placeholder{color:#999}.location::-webkit-input-placeholder,.query::-webkit-input-placeholder{color:blue}.location:-moz-placeholder,.query:-moz-placeholder{color:blue}.location::-moz-placeholder,.query::-moz-placeholder{color:blue}.location:-ms-input-placeholder,.query:-ms-input-placeholder{color:blue}textarea,input[type="text"],input[type="button"],input[type="submit"]{-webkit-appearance:none;border-radius:0}li{text-decoration:none}input[type="text"]:focus{outline:none;color:blue}.style-4 input[type="text"]{border:none;border-bottom:solid 2px #fff;transition:border 0.3s;color:blue}.style-4 input[type="text"]:focus,.style-4 input[type="text"].focus{border-bottom:solid 2px blue;text-decoration:none;color:blue}@media (max-width: 768px){input[type="text"]{width:35%}.fa-search,.fa-bars{width:15%}.search-parameters{text-align:center}}
-/*# sourceMappingURL=main.css.map */
+/* line 1, ../sass/main.scss */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, ../sass/main.scss */
+body {
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 16, ../sass/main.scss */
+#map {
+  height: 100%;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+/* line 22, ../sass/main.scss */
+.bg-image {
+  background: url("../images/nyc_bg_2.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: block;
+  -webkit-filter: opacity(0.7);
+  filter: opacity(0.7);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+/* line 39, ../sass/main.scss */
+.landing {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+/* line 56, ../sass/main.scss */
+.landing .main-cta {
+  font: 700 100px 'Oswald';
+  color: white;
+  margin: 0;
+  display: block;
+}
+/* line 62, ../sass/main.scss */
+.landing .sub-cta {
+  font: normal 15px 'pt mono';
+  color: white;
+  margin: 0;
+  padding: 5px 0;
+  display: block;
+}
+
+/* line 70, ../sass/main.scss */
+.cta {
+  padding-bottom: 25px;
+}
+
+/* line 73, ../sass/main.scss */
+.input-list {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+/* line 83, ../sass/main.scss */
+.fa-search,
+.fa-location-arrow {
+  color: #fff;
+  cursor: pointer;
+  width: 10%;
+  text-align: center;
+}
+
+/* line 91, ../sass/main.scss */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* line 98, ../sass/main.scss */
+.heading {
+  font: 700 20px 'Oswald';
+}
+
+/* line 102, ../sass/main.scss */
+.error {
+  font: 700 20px 'Oswald';
+  text-align: center;
+}
+
+/* line 107, ../sass/main.scss */
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* line 112, ../sass/main.scss */
+.box-container {
+  -moz-column-width: 17em;
+  -webkit-column-width: 17em;
+  column-width: 17em;
+  column-gap: 1em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em;
+}
+
+/* line 121, ../sass/main.scss */
+.box {
+  display: inline-block;
+  margin-bottom: 1em;
+  width: 100%;
+  border: 1px solid #333;
+}
+/* line 126, ../sass/main.scss */
+.box img {
+  width: 100%;
+}
+
+/* line 131, ../sass/main.scss */
+.box-bottom {
+  padding: 25px;
+  font: normal 13px 'pt mono';
+}
+
+/* line 136, ../sass/main.scss */
+.box-map {
+  height: 50px;
+  background-color: blue;
+  color: #fff;
+  font: 700 15px 'Oswald';
+  padding-left: 25px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  cursor: pointer;
+}
+/* line 150, ../sass/main.scss */
+.box-map:hover {
+  background-color: #0044ff;
+}
+/* line 154, ../sass/main.scss */
+.box-map i {
+  padding-right: 25px;
+}
+
+/* line 159, ../sass/main.scss */
+.box-bottom-container {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+
+/* line 170, ../sass/main.scss */
+.box-bottom-right i {
+  color: #ccc;
+}
+/* line 173, ../sass/main.scss */
+.box-bottom-right i:hover {
+  color: blue;
+}
+
+/* line 178, ../sass/main.scss */
+.box-bottom-right {
+  text-align: right;
+}
+
+/* line 182, ../sass/main.scss */
+.box-bottom-right a {
+  text-align: right;
+  color: #ccc;
+}
+/* line 186, ../sass/main.scss */
+.box-bottom-right a:hover {
+  color: blue;
+}
+
+/* line 191, ../sass/main.scss */
+.image {
+  position: relative;
+}
+
+/* line 195, ../sass/main.scss */
+.text-overlay {
+  color: black;
+  padding-left: 10px;
+}
+
+/* line 200, ../sass/main.scss */
+.caption-box {
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  font: 700 20px 'Oswald';
+}
+
+/* line 209, ../sass/main.scss */
+.caption-box-no-image {
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+  font: 700 20px 'Oswald';
+}
+
+/* line 216, ../sass/main.scss */
+.landing-header {
+  display: block;
+}
+
+/* line 220, ../sass/main.scss */
+input {
+  padding-left: 10px;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* line 230, ../sass/main.scss */
+input[type="text"] {
+  margin: 0;
+  font: 400 20px 'Oswald';
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  height: 50px;
+  width: 40%;
+}
+
+/* line 241, ../sass/main.scss */
+::-webkit-input-placeholder {
+  color: #999;
+}
+
+/* line 245, ../sass/main.scss */
+:-moz-placeholder {
+  color: #999;
+}
+
+/* line 249, ../sass/main.scss */
+::-moz-placeholder {
+  color: #999;
+}
+
+/* line 253, ../sass/main.scss */
+:-ms-input-placeholder {
+  color: #999;
+}
+
+/* Different color for some fields */
+/* line 258, ../sass/main.scss */
+.location::-webkit-input-placeholder,
+.query::-webkit-input-placeholder {
+  color: #E0DFD9;
+}
+
+/* line 263, ../sass/main.scss */
+.location:-moz-placeholder,
+.query:-moz-placeholder {
+  color: #E0DFD9;
+}
+
+/* line 268, ../sass/main.scss */
+.location::-moz-placeholder,
+.query::-moz-placeholder {
+  color: #E0DFD9;
+}
+
+/* line 273, ../sass/main.scss */
+.location:-ms-input-placeholder,
+.query:-ms-input-placeholder {
+  color: #E0DFD9;
+}
+
+/* line 278, ../sass/main.scss */
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+/* line 286, ../sass/main.scss */
+li {
+  text-decoration: none;
+}
+
+/* line 290, ../sass/main.scss */
+input[type="text"]:focus {
+  outline: none;
+  color: blue;
+}
+
+/* line 295, ../sass/main.scss */
+.style-4 input[type="text"] {
+  border: none;
+  border-bottom: solid 2px #fff;
+  transition: border 0.3s;
+  color: #E0DFD9;
+}
+
+/* line 302, ../sass/main.scss */
+.style-4 input[type="text"]:focus,
+.style-4 input[type="text"].focus {
+  border-bottom: solid 2px #A1A09E;
+  text-decoration: none;
+  color: #E0DFD9;
+}
+
+@media (max-width: 768px) {
+  /* line 318, ../sass/main.scss */
+  input[type="text"] {
+    width: 35%;
+  }
+
+  /* line 322, ../sass/main.scss */
+  .fa-search,
+  .fa-bars {
+    width: 15%;
+  }
+
+  /* line 331, ../sass/main.scss */
+  .search-parameters {
+    text-align: center;
+  }
+}

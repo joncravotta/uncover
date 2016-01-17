@@ -19,31 +19,49 @@ body {
   height: 400px;
   margin-bottom: 10px;
 }
-
-.landing {
+.bg-image {
   background: url('../images/nyc_bg_2.jpg');
+  width: 100%;
+  height: 100vh;
   background-size: cover;
+  display: block;
+   -webkit-filter: opacity(.7);
+  filter: opacity(.7);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+
+}
+.landing {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
   height: 100vh;
   width: 100%;
   display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
-  justify-content: flex-start;;
-  -webkit-justify-content: flex-start;
+  justify-content: center;
+  -webkit-justify-content: center;
   -webkit-flex-direction: column;
   flex-direction: column;
   text-align: center;
 
   .main-cta {
-    font: 700 45px 'Oswald';
-    color: blue;
+    font: 700 100px 'Oswald';
+    color: white;
     margin: 0;
     display: block;
   }
     .sub-cta {
   font: normal 15px 'pt mono';
-      color: blue;
+      color: white;
       margin: 0;
       padding:5px 0;
       display: block;
@@ -63,7 +81,7 @@ body {
 }
 
 .fa-search,
-.fa-bars {
+.fa-location-arrow {
   color: #fff;
   cursor: pointer;
   width: 10%;
@@ -206,6 +224,7 @@ input {
   -moz-box-sizing: border-box;
   /* Firefox, other Gecko */
   box-sizing: border-box;
+  background: transparent;
 }
 
 input[type="text"] {
@@ -214,7 +233,7 @@ input[type="text"] {
   appearance: none;
   box-shadow: none;
   border-radius: none;
-  background-color: #fff;
+  // background-color: ;
   height: 50px;
   width: 40%;
 }
@@ -238,22 +257,22 @@ input[type="text"] {
 /* Different color for some fields */
 .location::-webkit-input-placeholder,
 .query::-webkit-input-placeholder {
-  color: blue;
+  color: #E0DFD9;
 }
 
 .location:-moz-placeholder,
 .query:-moz-placeholder {
-  color: blue;
+  color: #E0DFD9;
 }
 
 .location::-moz-placeholder,
 .query::-moz-placeholder {
-  color: blue;
+  color: #E0DFD9;
 }
 
 .location:-ms-input-placeholder,
 .query:-ms-input-placeholder {
-  color: blue;
+  color: #E0DFD9;
 }
 
 textarea,
@@ -277,14 +296,14 @@ input[type="text"]:focus {
   border: none;
   border-bottom: solid 2px #fff;
   transition: border 0.3s;
-  color: blue;
+  color: #E0DFD9;
 }
 
 .style-4 input[type="text"]:focus,
 .style-4 input[type="text"].focus {
-  border-bottom: solid 2px blue;
+  border-bottom: solid 2px #A1A09E;
   text-decoration: none;
-  color: blue;
+  color: #E0DFD9;
 }
 
 @media (max-width: 768px) {
