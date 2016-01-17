@@ -21,15 +21,16 @@ body {
 }
 
 .landing {
-  background-color: #ccc;
+  background: url('../images/nyc_bg_2.jpg');
+  background-size: cover;
   height: 100vh;
   width: 100%;
   display: flex;
   display: -webkit-flex;
   align-items: center;
   -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
+  justify-content: flex-start;;
+  -webkit-justify-content: flex-start;
   -webkit-flex-direction: column;
   flex-direction: column;
   text-align: center;
