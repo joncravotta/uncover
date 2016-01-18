@@ -334,11 +334,9 @@ input[type="text"]:focus {
 }
 
 @media (max-width: 550px) {
-  // .box {
-  //   width: 100%;
-  // }
-  //
-  // .box-container {
-  //   justify-content: center;
-  // }
+  .landing {
+    .main-cta {
+      font: 700 70px 'Oswald';
+    }
+  }
 }

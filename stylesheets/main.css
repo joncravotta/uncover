@@ -364,3 +364,9 @@ input[type="text"]:focus {
     text-align: center;
   }
 }
+@media (max-width: 550px) {
+  /* line 338, ../sass/main.scss */
+  .landing .main-cta {
+    font: 700 70px 'Oswald';
+  }
+}
